@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dropdown Menu</title>
+<style>
+  * {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  body {
+    padding: 40px;
+    background: #f4f6f8;
+  }
+
+  /* Dropdown container */
+  .dropdown {
+    position: relative;
+    width: 200px;
+  }
+
+  /* Dropdown button */
+  .dropdown-btn {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  .dropdown-btn:focus {
+    outline: 2px solid #0056b3;
+  }
+
+  /* Dropdown menu */
+  .dropdown-menu {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    overflow: hidden;
+    display: none;
+    z-index: 1000;
+  }
+
+  .dropdown-menu.active {
+    display: block;
+  }
+
+  /* Dropdown items */
+  .dropdown-menu a {
+    display: block;
+    padding: 12px;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  /* .dropdown:hover .dropdown-menu{
+    display: block;
+  } */
+
+  /* .dropdown-menu a:hover  {
+    background: #f1f1f1;
+  } */
+
+</style>
+</head>
+<body>
+
+<div class="dropdown">
+  <button class="dropdown-btn" id="dropdownBtn">
+    Welcome,<span id="navUsername"></span> ▼
+  </button>
+
+  <div class="dropdown-menu" id="dropdownMenu">
+    <a href="#">Profile</a>
+    <!-- <a href="#">Settings</a>
+    <a href="#">Notifications</a> -->
+    <a href="#" onclick="logout()">Logout</a>
+  </div>
+</div>
+
+<script>
+ const username = localStorage.getItem("loggedInUser");
+
+  const registerLink = document.getElementById("registerLink");
+  const loginLink = document.getElementById("loginLink");
+  const userDropdown = document.getElementById("userDropdown");
+  const navUsername = document.getElementById("navUsername");
+
+  if (username) {
+    navUsername.textContent = username;
+    userDropdown.style.display = "block";
+    registerLink.style.display = "none";
+    loginLink.style.display = "none";
+  }
+
+  function logout() {
+    localStorage.removeItem("loggedInUser");
+    window.location.href = "index.html";
+  }
+
+  const btn = document.getElementById("dropdownBtn");
+  const menu = document.getElementById("dropdownMenu");
+
+  // Toggle dropdown
+  btn.addEventListener("click", () => {
+    const isOpen = menu.classList.toggle("active");
+    btn.setAttribute("aria-expanded", isOpen);
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".dropdown")) {
+      menu.classList.remove("active");
+      btn.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  // Keyboard support
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      menu.classList.remove("active");
+      btn.setAttribute("aria-expanded", "false");
+      btn.focus();
+    }
+  });
+</script>
+
+</body>
+</html>

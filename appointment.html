@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediCio|APPOINTMENT</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="medicio-favicon-1.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+ <header class="header">
+  <div class="logo-title">
+    <a href="index.html">
+      <img src="healthcare-logo1.png" alt="healthcare" class="logo">
+    </a>
+    <h2>MEDICIO</h2>
+  </div>
+
+  <!-- Hamburger Icon (Mobile only) -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <i class="fa fa-bars"></i>
+  </div>
+
+  <nav class="nav" id="mobileNav">
+    <a href="index.html">HOME</a>
+    <a href="services.html">SERVICES</a>
+    <a href="doctors.html">DOCTORS</a>
+    <a href="registerpage.html" id="registerLink">REGISTER</a>
+    <a href="login.html" id="loginLink">LOGIN</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+
+    <!-- User Dropdown -->
+    <div class="user-dropdown" id="userDropdown">
+      <span class="user-name">
+        Welcome, <span id="navUsername"></span> ▼
+      </span>
+      <div class="dropdown-menu">
+        <a href="profile.html">User Profile</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </div>
+    </div>
+
+    <div class="make">
+      <a href="appointment.html" style="color:#0097A7;font-weight:bold;">
+        Make an Appointment
+      </a>
+    </div>
+  </nav>
+</header>
+ <!--Appointment Section-->
+ <div class="appointment-container">
+   <div class="appointment">
+    <h2>MAKE AN APPOINTMENT</h2>
+    <p>"Book your appointment easily and get the care you deserve — your health is our priority".</p>
+   </div>
+   <div class="book">
+    <input type="text" id="pName" name="name" required placeholder=" Your Name">
+    <input type="email" id="pEmail" name="email"  required placeholder=" Your Email Address">
+    <input type="number" id="pPhone" name="number" required placeholder=" Your Phone Number">
+    </div> 
+    <br>
+    <div class="book1">
+    <input type="date" id="pDate" name="number" required placeholder=" Date" class="input">
+    <select class="select" id="pCity">
+        <option value="">Select City</option>
+        <option value="Bangaloru">Bangaluru,Karnataka</option>
+        <option value="Chennai">Chennai,TamilNadu</option>
+        <option value="Hyderabad">Hyderabad,Telangana</option>
+        <option value="Mumbai">Jaipur,Rajasthan</option>
+        <option value="Kolkata">Kolkata,West Bengal</option>
+        <option value="Chennai">Mumbai,Maharashtra</option>    
+    </select>
+    <select class="select" id="pDoctor">
+        <option value="">Select Doctors</option>
+        <option value="Dr. Rajesh Mehta">Dr. Rajesh Mehta(CMO)</option>
+        <option value="Dr. Olivia Martin">Dr. Olivia Martin(Cardiologist)</option>
+        <option value="Dr. Akash Deshmukh">Dr. Akash Deshmukh(Dermatologist)</option>
+        <option value="Dr. Victoria Adams">Dr. Victoria Adams(Neurosurgeon)</option>
+        <option value="Dr. Amit Verma">Dr. Amit Verma(Dentist)</option>
+        <option value="Dr. Kavita Joshi">Dr. Kavita Joshi(Gynecologist)</option>
+        <option value="Dr. Abhishek Kapoor">Dr. Abhishek Kapoor(Plastic Surgeon)</option>
+        <option value="Dr. Vinayak Rao">Dr. Vinayak Rao(ENT Specialist)</option>
+    </select>
+   </div>
+
+    <textarea name="Message" id="pMessage" required placeholder=" Message(Optional)" 
+     class="book-message"></textarea>
+
+   <div class="appoint-buttons">
+   <button onclick="sendAppointment()" type="submit" class="appointment-button">Submit</button>
+   <button  onclick="clearform()"  type="reset" class="appointment-button">Cancel</button>
+   </div>
+ </div>
+<!------popup-box------>
+<div class="popup" id="popupBox">
+  <div class="popup-content">
+      <h3>Appointment Booked!</h3>
+      <p>Your appointment has been Booked successfully.</p>
+      <button onclick="closePopup()">OK</button>
+  </div>
+</div>
+
+<!--Footer Section-->
+ <footer class="footer">
+        <div class="footr-content">
+        <h2 style="color: #0097A7;">Medicio</h2>
+        <p><b class="footer-text">Address:</b>2<sup>nd</sup> Floor,<br>Health Care Avenue,<br>
+         Near City Central Mall,<br>
+         Bengaluru-560102, Karnataka, India</p>
+        <p><b>Mon – Sat:</b> 6:00 AM – 11:00 PM</p>
+        <p><b>Sunday:</b> Closed (Emergency Available)</p>
+        <p><b>Phone:</b> +91 98765 43210</p>
+        <p><b>Email:</b>medicio@gmail.com</p>
+       </div>
+
+       <div class="footr-content">
+        <h2 style="color: #0097A7;">Quick Links</h2>
+        <a href="index.html">HOME</a>
+        <a href="services.html">SERVICES</a>
+        <a href="doctors.html">DOCTORS</a>
+        <a href="registerpage.html">REGISTER</a>
+        <a href="login.html">LOGIN</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="appointment.html">MAKE AN APPOINTMENT</a>
+       </div>
+
+       <div class="footr-content">
+        <h2 style="color:#0097A7;">Follow Us</h2>
+       <h2> <i class="bi bi-facebook" style="color: blue;"></i></h2>
+       <h2><i class="bi bi-twitter" style="color:#31cef5;"></i></h2>
+       <h2><i class="bi bi-instagram" style="color: red;"></i></h2>
+       <h2><i class="bi bi-linkedin" style="color: #3474eb;"></i></h2>
+       </div>
+    </footer>
+    <div class="footer-2">
+       <p> &copy; Copyright FY2025-2026 <b style="color: #0097A7;">MEDICIO</b> | All Rights Reserved.</p>
+    </div>
+
+<script>
+function sendAppointment() {
+
+  const username = localStorage.getItem("loggedInUser");
+
+  if (!username) {
+    alert("Please login to book an appointment.");
+    window.location.href = "login.html";
+    return;
+  }
+
+  const appointmentData = {
+    name: document.getElementById("pName").value,
+    email: document.getElementById("pEmail").value,
+    phone: document.getElementById("pPhone").value,
+    date: document.getElementById("pDate").value,
+    city: document.getElementById("pCity").value,
+    doctor: document.getElementById("pDoctor").value,
+    message: document.getElementById("pMessage").value
+  };
+  
+
+  if (!appointmentData.name || !appointmentData.email ||
+      !appointmentData.phone || !appointmentData.date ||
+      !appointmentData.city || !appointmentData.doctor) {
+
+    alert("Please fill all required fields.");
+    return;
+  }
+
+  localStorage.setItem(
+    `appointment_${username}`,
+    JSON.stringify(appointmentData)
+  );
+
+
+  openPopup();
+}
+
+// Show Popup
+function openPopup() {
+    document.getElementById("popupBox").style.display = "flex";
+}
+
+// Close Popup
+function closePopup() {
+  document.getElementById("popupBox").style.display = "none";
+  clearform(); 
+}
+function clearform()
+{
+  document.getElementById("pName").value="";
+  document.getElementById("pEmail").value="";
+  document.getElementById("pPhone").value="";
+  document.getElementById("pDate").value="";
+  document.getElementById("pCity").value="";
+  document.getElementById("pDoctor").value="";
+  document.getElementById("pMessage").value="";
+}
+
+/*This below script is for dropdown after logoin*/
+  const username = localStorage.getItem("loggedInUser");
+  const registerLink = document.getElementById("registerLink");
+  const loginLink = document.getElementById("loginLink");
+  const userDropdown = document.getElementById("userDropdown");
+  const navUsername = document.getElementById("navUsername");
+
+  if (username) {
+    navUsername.textContent = username;
+    userDropdown.style.display = "block";
+    registerLink.style.display = "none";
+    loginLink.style.display = "none";
+  }
+
+  function logout() {
+    localStorage.removeItem("loggedInUser");
+    window.location.href = "index.html";
+  }
+
+  function toggleMenu() {
+  document.getElementById("mobileNav").classList.toggle("active");
+}
+
+</script>
+</body>
+</html>

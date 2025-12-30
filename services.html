@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCio|SERVICES</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="medicio-favicon-1.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<!--Header Section-->
+<header class="header">
+  <div class="logo-title">
+    <a href="index.html">
+    <img src="healthcare-logo1.png" alt="healthcare" class="logo">
+    </a>
+    <h2>MEDICIO</h2>
+  </div>
+
+<!-- Hamburger Icon (Mobile only) -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <i class="fa fa-bars"></i>
+  </div>
+
+  <nav class="nav" id="mobileNav">
+    <a href="index.html">HOME</a>
+    <a href="services.html">SERVICES</a>
+    <a href="doctors.html">DOCTORS</a>
+    <a href="registerpage.html" id="registerLink">REGISTER</a>
+    <a href="login.html" id="loginLink">LOGIN</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+
+<!-- User Dropdown -->
+    <div class="user-dropdown" id="userDropdown">
+      <span class="user-name">
+        Welcome, <span id="navUsername"></span> ▼
+      </span>
+      <div class="dropdown-menu">
+        <a href="profile.html">User Profile</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </div>
+    </div>
+
+    <div class="make">
+      <a href="appointment.html" style="color:#0097A7;font-weight:bold;">
+        Make an Appointment
+      </a>
+    </div>
+  </nav>
+</header>
+    <!--Services Section-->
+    <h2 class="service-h2">OUR SERVICES</h2>
+    <p class="service-p">“Providing Specialized Medical Care with Excellence and Compassion”</p>
+    <section class="card-container-service"> <!--Section-1-->
+    <div class="card-service"> <!--Card-1-->
+        <img src="service img\service1.png" alt="Doctor-1">
+        <h2>General Consultation <i class="fa-solid fa-user-doctor"></i></h2>
+        <p>Our experienced physicians provide personalized consultations, medical checkups, and guidance. </p>
+    </div>
+    <div class="card-service"> <!--Card-2-->
+        <img src="service img\service2.png" alt="Doctor-1">
+        <h2>Emergency Care <i class="fas fa-ambulance"></i>
+        </h2>
+        <p>Available 24/7 for all medical emergencies with a fully equipped facility and  professionals.</p>
+    </div>
+    <div class="card-service"> <!--Card-3-->
+        <img src="service img\service3.png" alt="Doctor-1">
+        <h2>Laboratory & Diagnostics <i class="fas fa-flask"></i>
+        </h2>
+        <p>Accurate and timely lab testing with advanced diagnostic equipment to support precise treatment decisions.</p>
+    </div>
+    <div class="card-service"> <!--Card-4-->
+        <img src="service img\service8.png" alt="Doctor-1">
+        <h2>Pharmacy Support <i class="fas fa-pills"></i>
+        </h2>
+        <p>Our in-house pharmacy ensures quick access to prescribed medicines with expert pharmacist guidance.</p>
+    </div>
+    </section>
+
+     <section class="card-container-service1"> <!--Section-2-->
+    <div class="card-service1"> <!--Card-1-->
+        <img src="service img\service5.png" alt="Doctor-1">
+        <h2>Cardiology Services <i class="fas fa-heartbeat"></i></h2>
+        <p>Advanced cardiac diagnostics, treatment, and post-operative care with a focus on  heart health.</p>
+    </div>
+    <div class="card-service1"> <!--Card-2-->
+        <img src="service img\service6.png" alt="Doctor-1">
+        <h2>Dermatology  <i class="fas fa-hand-sparkles"></i></h2>
+        <p>Diagnosis and treatment of skin, hair, and nail conditions including acne, 
+            allergies, infections.</p>
+    </div>
+    <div class="card-service1"> <!--Card-3-->
+        <img src="service img\service7.png" alt="Doctor-1">
+        <h2>Neurology <i class="fas fa-brain"></i></h2>
+        <p>Comprehensive neurological care focusing on brain, spine, and nerve-related disorders with precision.</p>
+    </div>
+    <div class="card-service1"> <!--Card-4-->
+        <img src="service img\service4.png" alt="Doctor-1">
+        <h2>Dental Care <i class="fas fa-tooth"></i></h2>
+        <p>Comprehensive dental treatments including cleaning, fillings, braces, and cosmetic dentistry for a confident smile.</p>
+    </div>
+    <div class="card-service1"> <!--Card-5-->
+        <img src="service img\service-9.png" alt="Doctor-1">
+        <h2>Gynecologist <i class="fa-solid fa-user-nurse"></i></h2>
+        <p>Comprehensive women’s healthcare including pregnancy care, fertility treatment, menstrual health.</p>
+    </div>
+    <div class="card-service1"> <!--Card-6-->
+        <img src="service img\service10.pgn" alt="Doctor-1">
+        <h2>ENT Specialist <i class="fa-solid fa-ear-listen"></i></h2>
+        <p>Diagnosis and treatment of ear, nose, and throat conditions such as sinus issues, hearing problems, throat infections, and allergies.</p>
+    </div>
+    <div class="card-service1"> <!--Card-7-->
+        <img src="service img\service11.png" alt="Doctor-1">
+        <h2>Plastic Surgeon <i class="fa-solid fa-user-doctor"></i></h2>
+        <p>Advanced cosmetic and reconstructive procedures to enhance appearance and restore confidence with safe medical practices.</p>
+    </div>
+     <div class="card-service1"> <!--Card-8-->
+        <img src="service img\service12.png" alt="Doctor-1">
+        <h2>Physiotherapy <i class="fas fa-walking"></i>
+        </h2>
+        <p>Rehabilitation and physical therapy to improve mobility and strength.</p>
+    </div>
+    </section>
+
+
+    <!--Footer Section-->
+    <footer class="footer">
+        <div class="footr-content">
+        <h2 style="color: #0097A7;">Medicio</h2>
+        <p><b class="footer-text">Address:</b>2<sup>nd</sup> Floor,<br>Health Care Avenue,<br>
+         Near City Central Mall,<br>
+         Bengaluru-560102, Karnataka, India</p>
+        <p><b>Mon – Sat:</b> 6:00 AM – 11:00 PM</p>
+        <p><b>Sunday:</b> Closed (Emergency Available)</p>
+        <p><b>Phone:</b> +91 98765 43210</p>
+        <p><b>Email:</b>medicio@gmail.com</p>
+       
+       </div>
+
+       <div class="footr-content">
+        <h2 style="color: #0097A7;">Quick Links</h2>
+        <a href="index.html">HOME</a>
+        <a href="services.html">SERVICES</a>
+        <a href="doctors.html">DOCTORS</a>
+        <a href="registerpage.html">REGISTER</a>
+        <a href="login.html">LOGIN</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="appointment.html">MAKE AN APPOINTMENT</a>
+       </div>
+
+       <div class="footr-content">
+        <h2 style="color:#0097A7;">Follow Us</h2>
+       <h2> <i class="bi bi-facebook" style="color: blue;"></i></h2>
+       <h2><i class="bi bi-twitter" style="color:#31cef5;"></i></h2>
+       <h2><i class="bi bi-instagram" style="color: red;"></i></h2>
+       <h2><i class="bi bi-linkedin" style="color: #3474eb;"></i></h2>
+       </div>
+    </footer>
+    <div class="footer-2">
+       <p> &copy; Copyright FY2025-2026 <b style="color: #0097A7;">MEDICIO</b> | All Rights Reserved.</p>
+    </div>
+
+<script>
+  const username = localStorage.getItem("loggedInUser");
+  const registerLink = document.getElementById("registerLink");
+  const loginLink = document.getElementById("loginLink");
+  const userDropdown = document.getElementById("userDropdown");
+  const navUsername = document.getElementById("navUsername");
+
+  if (username) {
+    navUsername.textContent = username;
+    userDropdown.style.display = "block";
+    registerLink.style.display = "none";
+    loginLink.style.display = "none";
+  }
+
+  function logout() {
+    localStorage.removeItem("loggedInUser");
+    window.location.href = "index.html";
+  }
+
+   function toggleMenu() {
+  document.getElementById("mobileNav").classList.toggle("active");
+}
+</script>
+</body>
+</html>

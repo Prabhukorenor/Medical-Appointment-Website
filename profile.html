@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCio|PROFILE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="medicio-favicon-1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="profile-body">
+<div class="profile-container">
+  <div class="profile-header">
+    <div class="profile-avatar">
+      <i class="fa fa-user"></i>
+    </div>
+    <h2 id="profileName">Welcome, User</h2>
+  </div>
+  <!-- Appointment Details -->
+  <div class="profile-card">
+    <h3>Your Appointment Details</h3>
+
+    <div class="profile-row">
+      <span>Name:-</span>
+      <span id="pName">—</span>
+    </div>
+
+    <div class="profile-row">
+      <span>Email:-</span>
+      <span id="pEmail">—</span>
+    </div>
+
+    <div class="profile-row">
+      <span>Phone:-</span>
+      <span id="pPhone">—</span>
+    </div>
+
+    <div class="profile-row">
+      <span>Date:-</span>
+      <span id="pDate">—</span>
+    </div>
+
+    <div class="profile-row">
+      <span>City:-</span>
+      <span id="pCity">—</span>
+    </div>
+
+    <div class="profile-row">
+      <span>Doctor:-</span>
+      <span id="pDoctor">—</span>
+    </div>
+
+    <div class="profile-row message-row">
+      <span>Message:-</span>
+      <span id="pMessage">—</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+
+const username = localStorage.getItem("loggedInUser");
+document.getElementById("profileName").textContent =
+  `Welcome, ${username}`;
+
+if (!username) {
+  window.location.href = "login.html";
+}
+
+const appointment = JSON.parse(
+  localStorage.getItem(`appointment_${username}`)
+);
+
+if (appointment) {
+  document.getElementById("pName").textContent = appointment.name;
+  document.getElementById("pEmail").textContent = appointment.email;
+  document.getElementById("pPhone").textContent = appointment.phone;
+  document.getElementById("pDate").textContent = appointment.date;
+  document.getElementById("pCity").textContent = appointment.city;
+  document.getElementById("pDoctor").textContent = appointment.doctor;
+  document.getElementById("pMessage").textContent = appointment.message || "—";
+} else {
+  document.querySelector("profile-appointment").innerHTML =
+    "<p>No appointment booked yet.</p>";
+}
+</script>
+
+</body>
+</html>
